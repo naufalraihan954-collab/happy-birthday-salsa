@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Salsa Gembuw 💖</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Quicksand', sans-serif;
+    }
+
+    body {
+      overflow: hidden;
+      background: linear-gradient(135deg, #ffb6f9, #c084fc, #ff4d6d);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 700px;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(12px);
+      border-radius: 30px;
+      padding: 40px;
+      text-align: center;
+      color: white;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+      z-index: 2;
+      animation: fadeIn 1.5s ease;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 15px;
+      text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.8;
+      margin-top: 20px;
+    }
+
+    .heart {
+      font-size: 2rem;
+      animation: pulse 1s infinite;
+      display: inline-block;
+    }
+
+    .cats {
+      font-size: 2.2rem;
+      margin-top: 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .btn {
+      margin-top: 30px;
+      padding: 14px 28px;
+      border: none;
+      border-radius: 50px;
+      background: #ff4d6d;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      background: #ff1744;
+    }
+
+    .floating {
+      position: absolute;
+      font-size: 2rem;
+      animation: fly linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes fly {
+      from {
+        transform: translateY(110vh) rotate(0deg);
+      }
+      to {
+        transform: translateY(-120vh) rotate(360deg);
+      }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .popup {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.4s;
+      z-index: 5;
+    }
+
+    .popup.active {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup-content {
+      background: white;
+      color: #ff4d6d;
+      padding: 30px;
+      border-radius: 25px;
+      width: 85%;
+      max-width: 400px;
+      text-align: center;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .popup-content h3 {
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+    }
+
+    .popup-content p {
+      color: #444;
+      font-size: 1rem;
+    }
+
+    @media(max-width:600px){
+      h1 {
+        font-size: 2.2rem;
+      }
+
+      h2 {
+        font-size: 1.3rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <audio autoplay loop>
+    <source src="https://files.catbox.moe/9m0v8u.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    <h1>🎂 Happy Birthday 🎂</h1>
+    <h2>Salsa Gembuw 💖</h2>
+    <h2>Ulang Tahun ke-26!!</h2>
+
+    <div class="cats">🐱🐾🐈😺💜</div>
+
+    <p>
+      Selamat ulang tahun sayang aku,<br>
+      selamat bertambah usia...<br><br>
+      Semoga apa yang kita harapkan bersama saat ini
+      dan keinginan kamu bisa terwujud yaa 💕
+    </p>
+
+    <div class="heart">❤️</div>
+
+    <button class="btn" onclick="showPopup()">Klik Surprise 💌</button>
+  </div>
+
+  <div class="popup" id="popup">
+    <div class="popup-content">
+      <h3>Untuk Salsa Gembuw 💘</h3>
+      <p>
+        Makasih yaa udah hadir sejauh ini 🌷<br><br>
+        Semoga hari-hari kamu selalu penuh bahagia,
+        dipenuhi omeng-omeng lucu dan peluk hangat 💕🐱
+      </p>
+      <button class="btn" onclick="closePopup()">Tutup</button>
+    </div>
+  </div>
+
+  <script>
+    function showPopup() {
+      document.getElementById('popup').classList.add('active');
+    }
+
+    function closePopup() {
+      document.getElementById('popup').classList.remove('active');
+    }
+
+    const emojis = ['💖','🐱','💕','💜','❤️','🐾'];
+
+    for(let i = 0; i < 30; i++) {
+      const item = document.createElement('div');
+      item.classList.add('floating');
+      item.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+      item.style.left = Math.random() * 100 + 'vw';
+      item.style.animationDuration = (5 + Math.random() * 10) + 's';
+      item.style.fontSize = (20 + Math.random() * 30) + 'px';
+      document.body.appendChild(item);
+    }
+  </script>
+
+</body>
+</html>
